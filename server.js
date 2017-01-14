@@ -34,6 +34,6 @@ app.use(express.static(__dirname + '/public'));
 
 require('./server/routes/index.js')(app, passport);
 
-app.listen(envConfig.port, function(){
-  console.log('Server listening on port ' + envConfig.port)
+app.listen(envConfig.port, function() {
+    console.log('Server listening on port ' + envConfig.port)
 });
