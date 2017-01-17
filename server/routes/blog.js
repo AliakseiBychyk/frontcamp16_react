@@ -11,9 +11,16 @@ router.get('/', function (req, res) {
   
   // logic placed in controller
   posts.getPosts(function (posts) {
-    res.render('blog', { posts: posts });
+   // res.render('blog', { posts: posts });
+    res.json(posts); 
   });
 
+});
+
+router.get('/:id', function (req, res) {
+  posts.getPosts(function (posts) {
+    res.json(posts[req.params.id]);
+  })
 });
 
 router.post('/', function (req, res) {
@@ -31,7 +38,7 @@ router.post('/newpost', function (req, res) {
     body: req.body.body,
     permalink: req.body.permalink,
     author: req.body.author,
-    tags: req.body.tags.split(", "),
+    tags: req.body.tags.split(', '),
     date: req.body.date
   });
   

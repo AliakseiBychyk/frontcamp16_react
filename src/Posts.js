@@ -12,9 +12,9 @@ export default class Posts extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8000/api').then(r => r.json())
-            .then((data) => {
-                this.setState({posts: data.posts})
+        fetch('http://localhost:8000/blog').then(r => r.json())
+            .then((posts) => {
+                this.setState({posts: posts})
             })
             .catch((err) => {
                 console.log(err);
