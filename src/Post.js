@@ -36,14 +36,15 @@ export default class Post extends Component {
     return (
       <div>
         {this.props.params.postId}
-        <h3>{this.state.post.author}</h3>
+        <h3>{'Author: ' + this.state.post.author}</h3>
         <h1>{this.state.post.title}</h1>
         <h2>{this.state.post.body}</h2>
         <h4>Tags:</h4> 
         <h4>{this.state.post.tags.map(function(tag) {
-          return <span>{tag} </span>;
+          return <span>{tag + ' '}</span>;
         })}
-        </h4>               
+        </h4>
+        <h5>{this.state.post.date}</h5>
       </div>
     );
   }
