@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
   
   // logic placed in controller
   posts.getPosts(function (posts) {
-   // res.render('blog', { posts: posts });
+    // res.render('blog', { posts: posts });
     res.json(posts); 
   });
 
@@ -19,7 +19,7 @@ router.get('/', function (req, res) {
 
 router.get('/:id', function (req, res) {
   posts.getPosts(function (posts) {
-    res.json(posts[req.params.id]);
+    res.json(posts[req.params.title]);
   })
 });
 

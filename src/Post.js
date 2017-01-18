@@ -21,10 +21,10 @@ export default class Post extends Component {
 
     fetchPost(postId) {
         console.log(this.props.params.postId)
-        fetch(`http://localhost:8000/api/${postId}`).then(r => r.json())
-            .then((data) => {
-                console.log(data)
-                this.setState({post: data})
+        fetch(`http://localhost:8000/blog/${postId}`).then(r => r.json())
+            .then((post) => {
+                console.log(post)
+                this.setState({post: post})
             })
             .catch((err) => {
                 console.log(err);

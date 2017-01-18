@@ -10,4 +10,4 @@ render((
           <Route path="/:postId" component={Post} />
         </Route>
     </Router>
-), document.getElementById('example'));
+), document.getElementById('root'));

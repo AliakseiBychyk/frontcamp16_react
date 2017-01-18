@@ -23,12 +23,10 @@ export default class Posts extends Component {
 
     render() {
         return (
-            <div>
-                {this.state.posts.map(function(post, id) {
-                    return <Link to={`/${id}`} key={id}>{post.title}</Link>;
-                })}
-                {this.props.children}
-            </div>
+          <div>
+              <h1> Here are some posts </h1>
+              <div>{this.state.posts}</div>
+          </div>
         );
     }
 }
