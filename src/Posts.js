@@ -27,10 +27,12 @@ export default class Posts extends Component {
       <div className="container">
         <h1> Blog Page </h1>
         <h2 className="lead"> Here are some post below, do you want to add new post?</h2>
-        <form>
+        <form method="post" action="/blog">
           <button className="btn, btn-default" type="submit">Yes</button>
           &nbsp;
-          <button className="btn, btn-primary" type="button">No</button>
+          <a href="/">
+            <button className="btn, btn-primary" type="button">No</button>
+          </a>  
         </form>
         <br />
         <div className="container">
