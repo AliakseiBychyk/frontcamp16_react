@@ -12,9 +12,10 @@ export default class Posts extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8000/blog').then(r => r.json())
-            .then((posts) => {
-                this.setState({posts: posts})
+      fetch('http://localhost:8000/blog')
+            .then(response => response.json())
+            .then((data) => {
+                this.setState({posts: data.posts})
             })
             .catch((err) => {
                 console.log(err);
@@ -25,7 +26,17 @@ export default class Posts extends Component {
         return (
           <div>
               <h1> Here are some posts </h1>
-              <div>{this.state.posts}</div>
+              <div>
+                <ul>
+                {this.state.posts.map(function (post, id) {
+                  return (
+                    <li>
+                      <Link to={`/${id}`} key={id}>{post.title}</Link>
+                    </li>);
+                })}
+                </ul>
+                {this.props.children}
+              </div>
           </div>
         );
     }

@@ -21,25 +21,30 @@ export default class Post extends Component {
 
     fetchPost(postId) {
         console.log(this.props.params.postId)
-        fetch(`http://localhost:8000/blog/${postId}`).then(r => r.json())
-            .then((post) => {
-                console.log(post)
-                this.setState({post: post})
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        fetch(`http://localhost:8000/blog/${postId}`)
+          .then(response => response.json())
+          .then((post) => {
+            console.log(post)
+            this.setState({post: post})
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     }
 
     render() {
-        return (
-            <div>
-                {this.props.params.postId}
-                <h1>{this.state.post.author}</h1>
-                <h2>{this.state.post.title}</h2>
-                <h3>{this.state.post.body}</h3>
-                <h3>{this.state.post.tags}</h3>
-            </div>
-        );
+      return (
+        <div>
+          {this.props.params.postId}
+          <h3>{this.state.post.author}</h3>
+          <h1>{this.state.post.title}</h1>
+          <h2>{this.state.post.body}</h2>
+          <h4>Tags:</h4> 
+          <h4>{this.state.post.tags.map(function(tag) {
+            return <span>{tag} </span>;
+          })}
+          </h4>               
+        </div>
+      );
     }
 }
