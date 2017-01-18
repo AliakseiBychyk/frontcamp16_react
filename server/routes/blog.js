@@ -14,13 +14,6 @@ router.get('/', function (req, res) {
     // res.render('blog', { posts: posts });
     res.json({ posts: posts }); 
   });
-
-});
-
-router.get('/:id', function (req, res) {
-  posts.getPosts(function (posts) {
-    res.json(posts[req.params.id]);
-  })
 });
 
 router.post('/', function (req, res) {

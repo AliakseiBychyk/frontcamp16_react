@@ -24,9 +24,17 @@ export default class Posts extends Component {
 
   render() {
     return (
-      <div>
-        <h1> Here are some posts </h1>
-        <div>
+      <div className="container">
+        <h1> Blog Page </h1>
+        <h2 className="lead"> Here are some post below, do you want to add new post?</h2>
+        <form>
+          <button className="btn, btn-default" type="submit">Yes</button>
+          &nbsp;
+          <button className="btn, btn-primary" type="button">No</button>
+        </form>
+        <br />
+        <div className="container">
+        Latest Posts  
           <ul>
             {this.state.posts.map(function (post, id) {
               return (

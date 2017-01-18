@@ -34,7 +34,7 @@ export default class Post extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         {this.props.params.postId}
         <h3>{'Author: ' + this.state.post.author}</h3>
         <h1>{this.state.post.title}</h1>
