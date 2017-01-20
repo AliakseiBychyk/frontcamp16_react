@@ -22,10 +22,15 @@ router.post('/', function (req, res) {
 
 router.get('/json', function (req, res) {
   posts.getPosts(function (posts) {
-    res.json({ posts: posts }); 
+    res.json({ 'posts': posts }); 
   });
 });
 
+router.get('/json/:postId', function (req, res) {
+  posts.getPosts(function (posts) {
+    res.json(posts[req.params.postId]); 
+  });
+});
 
 router.get('/newpost', function(req, res) {
   res.render('newpost', {});
