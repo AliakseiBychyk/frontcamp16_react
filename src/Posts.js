@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Post from './Post';
+import NewPost from './NewPost';
 import { Link } from 'react-router';
 
 export default class Posts extends Component {
@@ -27,8 +28,8 @@ export default class Posts extends Component {
       <div className="container">
         <h1> Blog Page </h1>
         <h2 className="lead"> Here are some post below, do you want to add new post?</h2>
-        <form method="post" action="/blog">
-          <button className="btn, btn-default" type="submit">Yes</button>
+        <form method="post" action="/newpost">
+          <button className="btn, btn-default" type="submit"><Link to="/newpost">Yes</Link></button>
           &nbsp;
           <a href="/">
             <button className="btn, btn-primary" type="button">No</button>

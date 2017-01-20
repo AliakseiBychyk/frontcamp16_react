@@ -12,7 +12,6 @@ router.get('/', function (req, res) {
   // logic placed in controller
   posts.getPosts(function (posts) {
     res.render('blog', { posts: posts });
-  //  res.json({ posts: posts }); 
   });
 });
 
@@ -33,7 +32,7 @@ router.get('/json/:postId', function (req, res) {
 });
 
 router.get('/newpost', function(req, res) {
-  res.render('newpost', {});
+  res.render('newpost');
 });
 
 router.post('/newpost', function (req, res) {

@@ -13,7 +13,7 @@ module.exports = function (app, passport) {
   app.use('/blog', blog);
 
   router.get('/', function (req, res, next) {
-    res.render('index', { title: "Aleks's Blog", user: req.user });
+    res.render('index', { title: 'Aleks\'s Blog', user: req.user });
   });
 
   router.get('/logout', function (req, res) {
