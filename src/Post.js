@@ -22,7 +22,7 @@ export default class Post extends Component {
 
   fetchPost(postId) {
     console.log(this.props.params.postId)
-    fetch(`http://localhost:8000/blog/${postId}`)
+    fetch(`http://localhost:8000/blog/json/${postId}`)
       .then(response => response.json())
       .then((post) => {
         console.log(post)
@@ -43,14 +43,14 @@ export default class Post extends Component {
     console.log(this.state.post);
     return (
       <div className="container">
-
-        <h3>{'Author: ' + this.state.post.author}</h3>
-        <h1>{this.state.post.title}</h1>
-        <h2>{this.state.post.body}</h2>
+        {this.props.params.postId}
+        <h3 key={this.state.post._id}>{'Author: ' + this.state.post.author}</h3>
+        <h1 key={this.state.post._id}>{this.state.post.title}</h1>
+        <h2 key={this.state.post._id}>{this.state.post.body}</h2>
         <h4>Tags:</h4> 
-        <h4>{this.renderTags()}
+        <h4 key={this.state.post._id}>{this.renderTags()}
         </h4>
-        <h5>{this.state.post.date}</h5>
+        <h5 key={this.state.post._id}>{this.state.post.date}</h5>
       </div>
     );
   }

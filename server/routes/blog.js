@@ -11,14 +11,21 @@ router.get('/', function (req, res) {
   
   // logic placed in controller
   posts.getPosts(function (posts) {
-    // res.render('blog', { posts: posts });
-    res.json({ posts: posts }); 
+    res.render('blog', { posts: posts });
+  //  res.json({ posts: posts }); 
   });
 });
 
 router.post('/', function (req, res) {
   res.redirect('/blog/newpost');
 });
+
+router.get('/json', function (req, res) {
+  posts.getPosts(function (posts) {
+    res.json({ posts: posts }); 
+  });
+});
+
 
 router.get('/newpost', function(req, res) {
   res.render('newpost', {});
