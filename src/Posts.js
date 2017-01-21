@@ -31,7 +31,7 @@ export default class Posts extends Component {
         <form method="post" action="/newpost">
           <button className="btn, btn-default" type="submit"><Link to="/newpost">Yes</Link></button>
           &nbsp;
-          <a href="/">
+          <a href="/blog">
             <button className="btn, btn-primary" type="button">No</button>
           </a>  
         </form>
@@ -42,7 +42,7 @@ export default class Posts extends Component {
             {this.state.posts.map(function (post, id) {
               return (
                 <li>
-                  <Link to={`/${id}`} key={id}>{post.title}</Link>
+                  <Link to={`/blog/${id}`} key={id}>{post.title}</Link>
                 </li>);
             })}
           </ul>

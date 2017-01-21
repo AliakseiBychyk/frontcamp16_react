@@ -7,10 +7,10 @@ import { Link, Route, Router, browserHistory } from 'react-router';
 
 render((
   <Router history={browserHistory}>
-    <Route path="/" component={Posts}>
-      <Route path="/:postId" component={Post} />
-      <Route path="/newpost" component={NewPost} />    
-    </Route>        
+    <Route path="/blog" component={Posts}>
+      <Route path="/blog/:postId" component={Post} />        
+    </Route> 
+    <Route path="/newpost" component={NewPost} /> 
   </Router>
   
 ), document.getElementById('root'));
