@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-const greetings = 'WELCOME TO ALEKS\'S BLOG';
+//const greetings = 'WELCOME TO ALEKS\'S BLOG';
 
 export default class Home extends Component {
     constructor() {
       super();
     }
 
-  render() {
+    render() {
+    const greetings = 'WELCOME TO ALEKS\'S BLOG';
     return (
       <div className = "container" >
         <h1> {greetings} </h1>
