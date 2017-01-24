@@ -52,9 +52,7 @@
     "react-router": "^2.4.1",
     "serve-favicon": "~2.3.0",
     "should": "~2.1.0",
-    "wagner-core": "^0.2.0",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "wagner-core": "^0.2.0"
   },
   "devDependencies": {
     "css-loader": "^0.26.1",
