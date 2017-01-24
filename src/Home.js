@@ -11,7 +11,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className = "container" >
-        <h1> WELCOME TO ALEKS\'S BLOG </h1>
+        <h1> "WELCOME TO ALEKS\'S BLOG" </h1>
         <h4> <Link to = "/login" > Log in </Link></h4>
         <h4> <Link to="/register" > Sing up </Link></h4>
         {this.props.children}
